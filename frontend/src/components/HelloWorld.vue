@@ -1,31 +1,27 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
+      Welcome in <span class="important">Cosmo</span>!
     </p>
-    <p></p>
+    <p>Current User: {{ curUser.username }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent, ref } from "vue";
 import { useStore } from "vuex";
-
-export default Vue.extend({
+export default defineComponent({
+  setup() {
+    const store = useStore();
+    const curUser = ref(store.state.User);
+    return {
+      curUser
+    };
+  },
   name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
-  computed:{
-    getUsername(){
-      return this.user.username;
-    }
-  }
 });
 </script>
 
@@ -42,7 +38,7 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+a, .important {
   color: #42b983;
 }
 </style>

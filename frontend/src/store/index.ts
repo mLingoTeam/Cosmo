@@ -1,14 +1,11 @@
-import Vue from "vue";
 import Vuex, {
   Store as VuexStore,
   CommitOptions,
-  DispatchOptions,
 } from 'vuex'
 import {CosmoState, cosmoState} from './cosmoState';
 import { Mutations, mutations } from './mutations';
 import { Getters, getters } from './getters';
 
-Vue.use(Vuex);
 
 
 export const store = new Vuex.Store<CosmoState>({
