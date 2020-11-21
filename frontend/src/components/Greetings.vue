@@ -1,8 +1,6 @@
 <template>
   <div class="hello">
-    <p>
-      Welcome in <span class="important">Cosmo</span>!
-    </p>
+    <p>Welcome in <span class="important">Cosmo</span>!</p>
     <p>Current User: {{ curUser.username }}</p>
   </div>
 </template>
@@ -18,10 +16,10 @@ export default defineComponent({
       curUser
     };
   },
-  name: "HelloWorld",
+  name: "Greetings",
   props: {
-    msg: String,
-  },
+    msg: String
+  }
 });
 </script>
 
@@ -38,7 +36,8 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a, .important {
+a,
+.important {
   color: #42b983;
 }
 </style>
