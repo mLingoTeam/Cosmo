@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/ship">Ship</router-link> |
+      <router-link to="/">Home</router-link>
+      <router-link to="/ship">Ship</router-link>
       <router-link to="/galaxy">Galaxy</router-link>
     </div>
     <router-view />
@@ -33,7 +33,7 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: rgba(44, 62, 80, 0.9);
+  background: rgba(00, 00, 00, 0.5);
   z-index: 999;
 
   a {

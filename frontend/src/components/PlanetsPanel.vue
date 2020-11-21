@@ -1,15 +1,16 @@
 <template>
-  <div class="hello">
-    <h1>Choose a planet</h1>
-    <div>Planet</div>
-    <div>Planet</div>
-    <div>Planet</div>
+  <div class="PlanetsPanel">
+    <span v-for="planet in planets" :key="planet.name" class="planet__container">
+        <Planet :planet="planet"/>
+    </span>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { useStore } from "vuex";
+import Planet from "./Planet.vue";
+
 export default defineComponent({
   setup() {
     const store = useStore();
@@ -18,28 +19,38 @@ export default defineComponent({
       curUser
     };
   },
+  data(){
+    return {
+      planets:[
+        {name: "Tatooine"},
+        {name: "Mars"},
+        {name: "Earth"}
+      ]
+    }
+  },
   name: "PlanetsPanel",
-  props: {
-    msg: String
+  components:{
+    Planet,
   }
+
 });
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
+.PlanetsPanel{
+  margin-left: 4vw;
+  width: 96vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a,
-.important {
-  color: #42b983;
+
+.planet__container {
+    width: 20%;
+    height: 400px;
+    padding: 50px 3%;
+    background: rgba(00,00,00,0.5);
 }
 </style>
